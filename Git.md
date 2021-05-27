@@ -2,24 +2,26 @@
 
 # Git
 
-## 一、git fetch 和 git pull 的区别
+## 一、git fetch 和 git pull
 
-### 1. 远程跟踪分支不同
+### 1.区别
+
+#### 1. 远程跟踪分支不同
 
 + git fetch：能够直接更改远端跟踪分支
 + git pull：无法直接对远程跟踪分支进行操作，必须先切回本地分支，然后创建一个新的commit提交
 
-### 2. 拉取不同
+#### 2. 拉取不同
 
 + git fetch：将数据拉取到本地仓库-并不会自动修改和合并当前的工作
 + git pull：从远程获取最新版本并merge到本地-会自动修改和合并当前的工作
 
-### 3. commitID不同
+#### 3. commitID不同
 
 + git fetch：commitID不变
 + git pull：commitID发生改变
 
-### 4. 语法
+### 2. 语法
 
 ```bash
 git pull 远程主机(origin) 远程分支(master)
@@ -32,7 +34,7 @@ git pull 远程主机(origin) 远程分支(master): 本地分支
 
 
 
-### 5. 演示
+### 3. 演示
 
 ```shell
 git fetch origin master
@@ -61,13 +63,24 @@ git merge
 
 ## 二、git clone 和 git pull
 
-### 1. git clone 从远程拉取整个版本库
+### 1. 区别
 
-### 2. git pull 从远程拉取版本库的某个分支，并与本地分支合并
+#### 1. git clone 从远程拉取整个版本库
+
+#### 2. git pull 从远程拉取版本库的某个分支，并与本地分支合并
 
 有些时候，git 会自动在本地和远程之间，建立一种追踪。
 
 git clone，所有本地分支默认与远程主机的同名分支建立追踪关系
+
+### 2. 语法
+
+```bash
+git clone git@github.com:username/repository.git
+git clone http://github.com:username/repository.git
+```
+
+
 
 ### 3. git branch --set-upstream master origin/next 建立分支追踪关系
 
