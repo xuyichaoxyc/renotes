@@ -1,0 +1,40 @@
+#components-layout-demo-responsive .logo {
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+}
+
+.header {
+    background: #fff;
+    height: 64px;
+}
+
+.content {
+    margin: 12px 8px 0;
+    /* padding: 10px; */
+}
+
+.div_content {
+    padding: 24px;
+    border-radius: 10px;
+    background: #fff;
+    min-height: 745px;
+}
+
+.footer {
+    text-align: center;
+}
+.logo {
+    display: flex;
+    width: 100px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.img-logo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 10px;
+    left: 25px;
+}
