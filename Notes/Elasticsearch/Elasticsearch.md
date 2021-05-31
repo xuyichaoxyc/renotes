@@ -1,4 +1,4 @@
-[TOC]
+@[TOC]
 
 # elasticsearch 的安装
 
