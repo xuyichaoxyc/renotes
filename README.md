@@ -1,4 +1,6 @@
-**本git只用于个人学习，无其他商业用途，如有雷同欢迎指出。** 
+**本git只用于个人学习，无其他商业用途，如有雷同欢迎指出。**
+
+**请勿提交违规内容** 
 
 <div style="align: center">
 	<img src="asserts/images/书.png"/>
