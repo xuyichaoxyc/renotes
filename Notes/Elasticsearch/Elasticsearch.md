@@ -1,4 +1,4 @@
-@[TOC](Elasticsearch)
+[TOC]
 
 # elasticsearch 的安装
 
@@ -2427,3 +2427,117 @@ GET /bank/_search
 }
 ```
 
+# Spring data Elasticsearch
+
+Spring Data Elasticsearch是Spring提供的一种以Spring Data风格来操作数据存储的方式，它可以避免编写大量的样板代码。
+
+## 常用注解
+
+```java
+/*
+	@Document
+	//标示映射到Elasticsearch文档上的领域对象
+*/
+public @interface Document
+{
+	//索引库名次，mysql中数据库的概念
+	String indexName();
+	//文档类型，mysql中表的概念
+	String type() default "";
+	//默认分片数
+	short shards () default 5;
+	//默认副本数量
+    short replicas() default 1；
+}
+
+/*
+	@ID
+	文档的id，文档可以认为是mysql中表行的概念
+*/
+public @interface ID{
+    
+}
+
+/*
+	@Field
+	
+*/
+public @interface Field
+{
+    //文档中字段的类型
+    FieldType type() default FieldType.Auto;
+    //是否建立倒排索引
+    boolean index () default true;
+    //是否进行存储
+	boolean store() default false;
+    //分词器名次
+    boolean analyzer() default "";
+}
+//为文档自动指定元数据类型
+public enum FieldType{
+    Text,//会进行分词并建立了索引的字符类型
+    Integer,
+    Long,
+    Date,
+    Float,
+    Double,
+    Boolean,
+    Object,
+    Auto,//自动判断字段类型
+    Nested,// 嵌套对象类型
+    Ip,
+    Attachment,
+    keyword// 不会进行分词建立索引的类型
+}
+```
+
+
+
+## Spring data 方式的数据操作
+
+### 在pom.xml中添加相关依赖
+
+```xml
+<!--Elasticsearch相关依赖-->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-elasticsearch<artifactId>
+</dependency>
+```
+
+### 修改SpringBoot配置文件
+
+```yaml
+#（application.yml文件）在 Spring 节点下添加 Elasticsearch相关配置
+spring:
+	data:
+		elasticsearch:
+			repositories:
+				enable:true
+			cluster-nodes:127.0.0.1:9300	# es 的连接地址和端口号
+			cluster-name:elasticsearch	# es集群的名称
+```
+
+### 添加商品文档对象EsProduct
+
+不需要中文分词的字段设置成@Field(type = FieldType.Keyword)类型，
+
+需要中文分词的设置成@Field(analyzer = "ikmaxword",type = FieldType.Text)类型。
+
+<img src="https://raw.githubusercontent.com/xuyichaoxyc/imgSave/master/img/20210531172336.png" style="zoom:50" /> 
+
+### 添加EsProductRepository接口用于操作Elasticsearch
+
+继承ElasticsearchRepository接口，这样就拥有了一些基本的Elasticsearch数据操作方法，同时定义了一个衍生查询方法。
+
+String name, String subTitle, String keywords, Pageable page
+
+<img src="https://raw.githubusercontent.com/xuyichaoxyc/imgSave/master/img/20210531172538.png" style="zoom:50" />
+
+### 添加EsProductService接口
+
+<img src="https://raw.githubusercontent.com/xuyichaoxyc/imgSave/master/img/20210531172811.png" style="zoom:50" />
+
+### 添加EsProductService接口的实现类EsProductServiceImpl
+
+### 添加EsProductController定义接口
