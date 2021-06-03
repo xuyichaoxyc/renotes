@@ -33,6 +33,7 @@ public class EsProductServiceImpl implements EsProductService {
 
     @Override
     public int importAll() {
+        // 从数据库中导入所有商品
         List<EsProduct> esProductList = productDao.getAllEsProductList(null);
         Iterable<EsProduct> esProductIterable = productRepository.saveAll(esProductList);
         Iterator<EsProduct> iterator = esProductIterable.iterator();
