@@ -36,8 +36,7 @@ request header {
     If-Modified-Since: Wed, 12 May 2021 06:51:41 GMT
 }
 ```
-
-### 一、Last-Modified
+## 一、Last-Modified
 
 > 资源修改时间
 
@@ -49,7 +48,7 @@ request header {
 
 这时候利用服务器传回的`ETag`信息进行比较。  
 
-### 二、ETag和If-Match
+## 二、ETag和If-Match
 
 > ETag
 
@@ -76,7 +75,7 @@ Apache HTTP服务器可能被远程攻击者获取敏感信息。如果将服务
 
 [IBM 关于该漏洞的公示](https://exchange.xforce.ibmcloud.com/vulnerabilities/11438)
 
-### 三、Cache-Control  
+## 三、Cache-Control  
 
 ​		服务器在Response Headers里**设置Cache-Control或Expires**头信息，可以指定该资源缓存可用时常，这样可以跳过条件请求直接获取本地缓存。
 
@@ -111,7 +110,7 @@ Cache:
 | proxy-revalidate |     与must-revalidate类似，但仅能应用与共享缓存，如代理      |
 | s-maxage=seconds |              同max-age但引用与共享缓存，如代理               |
 
-### 四、Server  
+## 四、Server  
 
 `server`字段表示显示服务器的安装信息，如nginx、apache等  
 
@@ -131,7 +130,7 @@ static char ngx_http_server_full_string[] = "Server:X-Web " CRLF;
 
 可以是的response header中的server字段显示显示为**x-web**。
 
-### 五、Via  
+## 五、Via  
 > CDN Cache Server  
 CDN的全称Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快，更稳定。CDN系统能够实时地根据网络流量和各节点的连接，负债情况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。  
 
@@ -143,7 +142,7 @@ CDN的全称Content Delivery Network，即内容分发网络。其基本思路�
 X-Via: 1.1 hzsx163:5 (Cdn Cache Server V2.0), 1.1 PS-WNZ-01uZo114:13 (Cdn Cache Server V2.0)
 ```
 
-### 六、 Remote Address  
+## 六、 Remote Address  
 
 表示发出请求的远程主机的IP地址，`Remote Address`代表客户端的IP，但它的值不是由客户端提供的，***而是服务端根据客户端的IP指定的***.
 
@@ -152,8 +151,4 @@ X-Via: 1.1 hzsx163:5 (Cdn Cache Server V2.0), 1.1 PS-WNZ-01uZo114:13 (Cdn Cache 
 使用代理时：浏览器先访问代理，再由代理转发到这个网站，web服务器就会把`Remote Address`设为代理机器的IP。对客户端IP信息有一定的隐藏性。
 
 `Remote Address`一般用来进行三次握手连接，**无法伪造**，如果伪造，则三次握手会失败。  
-
-
-
-[商城](D:\MarkDownFiles\公司内部\shop.md)
 
