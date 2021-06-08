@@ -289,13 +289,43 @@ sysvinit
 
 ### 系统关机过程
 
+最常用的系统关机命令：init、shutdown、halt、reboot
+
 ## 系统服务管理工具 systemd
 
 ### 启动、停止、重启服务
 
+```shell
+# 启动一个服务，这里是 httpd 服务
+systemctl start httpd.service
+# 停止服务
+systemctl stop httpd.service
+# 重启服务，
+systemctl restart httpd.service
+systemctl try-restart httpd.service    # 只在服务已经运行的状态下重启服务
+systemctl reload httpd.service    # 重新加载配置文件,而不中断服务
+```
+
+
+
 ### 查看、禁止、启用服务
 
+```shell
+# 启用服务,打开了http服务开机自启动功能
+systemctl enable httpd.service
+# 关闭服务
+systemctl disable httpd.service
+# 查看服务
+systemctl status httpd.service
+
+
+```
+
+
+
 ### systemd和sysvinit命令对比
+
+![image-20210608090505412](Linux%E5%AD%A6%E4%B9%A0.assets/image-20210608090505412-1623114308646.png)
 
 ## Linux 与 SecureCRT
 
@@ -373,27 +403,83 @@ Linux系统下打开的3个文件：标准输入、标准输出和标准错误�
 
 #### ls
 
+功能：显示指定工作目录下的内容，列出工作目录所含的文件及子目录
+
+语法：ls [选项] [路径或文件]
+
 #### pwd
+
+功能：显示当前的工作目录
+
+语法：pwd
 
 #### cd
 
+功能：改变当前工作目录
+
+语法：cd [目录名]
+
 #### date
+
+功能：显示或者修改系统时间与日期，超级用户才能用 date 命令设置时间，一般用户只能用date命令显示时间
+
+语法：data [选项] 显示时间格式(以 + 开头，后米娜接时间格式)
+
++ -s --set：设置系统时间
++ -d --date：显示描述的日期
++ ![image-20210608091545720](Linux%E5%AD%A6%E4%B9%A0.assets/image-20210608091545720-1623114949587.png)
 
 #### passwd
 
+功能：设置用户密码
+
+语法：passwd [用户名]
+
+![image-20210608091903853](Linux%E5%AD%A6%E4%B9%A0.assets/image-20210608091903853-1623115146602.png)
+
+
+
 #### su
+
+功能：改变用户身份
+
+语法：su [选项] [用户名]
 
 #### clear
 
+功能：清楚屏幕信息
+
 #### man
+
+功能：显示指定命令的帮助信息
+
+语法：man [命令名称]
 
 #### who
 
+功能：显示目前登录到系统的用户
+
+语法：who [选项] [file]
+
+输出格式：名称 [状态] 终端 时间 [活动] [进程标识] (主机名)
+
+
+
 #### w
+
+功能：显示登录到系统的用户信息
+
+
 
 #### uname
 
+功能：显示操作系统相关信息
+
+
+
 #### uptime
+
+
 
 #### last
 
