@@ -1,4 +1,4 @@
-package chapter03_fileio;
+package chapter03_fileio.byteio;
 
 import java.io.*;
 
@@ -9,6 +9,7 @@ import java.io.*;
  */
 public class InputStreamTest {
     public static void main(String[] args) {
+        System.out.println(InputStreamTest.class.getResource(""));
         testStream();
     }
     /**
@@ -18,8 +19,9 @@ public class InputStreamTest {
         InputStream fis = null;
         OutputStream fos = null;
         try{
-            fis = new FileInputStream("/src/chapter03_fileio/x.txt");
-            fos = new FileOutputStream("./xcopy.txt");
+            fis = new FileInputStream("part02_chapter03_files/x.txt");
+//            fis = new FileInputStream("part02/chapter03_fileio/x.txt");
+            fos = new FileOutputStream("part02_chapter03_files/xcopy.txt");
 
             long num = 0;
             int bt = 0;

@@ -1,4 +1,4 @@
-package chapter03_fileio;
+package chapter03_fileio.byteio;
 
 import java.io.*;
 
@@ -14,8 +14,8 @@ public class BufferedTest {
         BufferedInputStream bis = null;
         BufferedOutputStream bos = null;
 
-        String name1 = "java.txt";
-        String name2 = "copyjava.txt";
+        String name1 = "part02_chapter03_files/java.txt";
+        String name2 = "part02_chapter03_files/copyjava.txt";
 
         int i;
         try{
