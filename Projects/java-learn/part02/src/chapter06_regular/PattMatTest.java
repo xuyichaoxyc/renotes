@@ -31,6 +31,11 @@ public class PattMatTest {
         // 使用 while 循环进行匹配检查
         while(ma.find())
         {
+            System.out.println(ma.group(0));
+            System.out.println(ma.group(1));
+            System.out.println(ma.group(2));
+            System.out.println(ma.group(3));
+
             // 创建一个临时字符串的缓冲区
             StringBuffer temp = new StringBuffer();
             if (ma.group(3).equals("am")) {
