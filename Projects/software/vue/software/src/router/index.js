@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Hello from '../components/Hello'
+import Hello from '@/components/Hello'
+//引入首页
+import Index from '@/components/Index'
+
 
 Vue.use(Router)
 
@@ -16,6 +19,11 @@ export default new Router({
       path: '/hello',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/index',
+      name: 'Index',
+      component: Index
     }
   ]
 })
