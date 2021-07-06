@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Annotation/Annotation.iml" filepath="$PROJECT_DIR$/Annotation/Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-learn.iml" filepath="$PROJECT_DIR$/java-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/part01/part01.iml" filepath="$PROJECT_DIR$/part01/part01.iml" />
       <module fileurl="file://$PROJECT_DIR$/part02/part02.iml" filepath="$PROJECT_DIR$/part02/part02.iml" />
