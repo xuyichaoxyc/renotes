@@ -153,5 +153,205 @@ mvn clean
 
 # Spring 核心技术
 
+Java EE 是企业应用需求的体现
+
+Spring 则基于企业应用并非全是分布式
+
+Spring 框架
+
++ Spring Framework
++ Spring Boot
++ Spring Data系列
++ Spring Cloud系列
+
+等
+
+## Spring 容器介绍
+
+### Spring IOC / DI
+
+传统企业应用代码：
+
+​	类中直接创建对象，如果对象构造器比较复杂，是个单例对象，那么会使用工厂类来完成创建。
+
+Spring 框架中：
+
+​	容器帮你注入所需要的依赖对象
+
+Spring 容器管理Bean，需要声明 Bean
+
+​	类上注解：@Service、@Controller、@Configuration
+
+​	方法上注解：@Bean
+
+​	实现 Spring 的某些接口类，Spring 会在容器的生命周期里调用这些接口类。BeanPostProcessor接口，在所有容器管理Bean初始化后，会调用此接口实现，对 Bean 进行进一步的配置。
+
+AutowiredAnnotationBeanPostProcessor 会 寻找 Bean 里的 @Autowired 注解来注入依赖
+
+
+
+
+
+### Spring常用注解
+
+Spring 提供了多个注解声明 Bean 为 Spring 管理的 Bean，注解不同代表的含义不一样，但是对于 Spring 容器来说，都是 Spring 管理的Bean。
+
++ Controller：声明此类是一个 MVC 类，通常 与 @RequestMapping 一起使用，方法返回的一般是视图名称
+
+  + ```java
+    @Controller
+    @RequestMapping("/user")
+    public class UserController{
+        @RequestMapping("/get/{id}")
+        public String getUser(@PathVariable String id){
+            ...
+        }
+    }
+    ```
+
+    + 如 用户访问地址为 /user/get/1，将调用getUser() 方法，并把参数 1 传给 id。
+
++ Service：声明此类是一个业务处理类，通常与 @Transactional 一起使用
+
+  + ```java
+    @Service
+    @Transactional
+    public class userServiceImpl implements UserService{
+        public void order(..){
+            ..
+        }
+    }
+    ```
+
++ Repository：声明此类是一个数据库或者其他 NoSQL 访问类
+
+  + ```java
+    @Repository
+    public class UserDao implements CrudDao<User, String>{
+        ..
+    }
+    ```
+
++ RestController：同 Controller，用于 REST 服务，相当于 @ResponseBody 和 @Controller 的结合
+
+  + @ResponseBody，返回文本而不是视图名称
+
++ Component：声明此类是一个 Spring 管理的类，通常用于无法用上述注解描述的 Spring 管理类
+
++ Configuration：声明此类是一个配置类，通常与注解 @Bean 联合使用
+
+  + ```java
+    @Configuration
+    public class DataSourceConfig{
+        @Bean(name = "dataSource")
+        public DataSource datasource(Environment env){
+            HikariDataSource ds = new HikariDataSource();
+            ds.setJdbcUrl(env.getProperty("spring.datasource.url"));
+            ds.setUsername(env.getProperty("spring.datasource.username"));
+            ds.setPassword(env.getProperty("spring.datasource.password"));
+            ds.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));
+        	
+            return ds;
+        }
+    }
+    ```
+
+  + @Bean：作用在方法上，声明该方法执行的返回结果是一个 Spring 容器管理的Bean
+
+### 进一步配置Bean
+
+Spring 负责实例化Bean，开发者可以提供一系列回调函数，用于**进一步配置 Bean**，包括@PostConstruct注解和@PreDestroy注解
+
+
+
+当 Bean 被容器初始化后，会调用 @PostConstruct 注解的方法
+
+在 Bean 被容器销毁之前，会调用 @PreDestroy 注解的方法
+
+```java
+@Component
+public class Example{
+    @PostConstruct
+    public void init(){
+        ...
+    }
+}
+
+@Service
+public class ExampleBean{
+    @PreDestory
+    public void cleanup(){
+        ..
+    }
+}
+```
+
+其他 Bean 声明周期的回调方式：指定初始化和销毁的方法
+
+用 实现 InitializingBean 接口的 afterPropertiesSet() 来初始化Bean
+
+实现 DisposableBean 的 destroy() 方法来销毁 Bean
+
+
+
+### 引用容器管理的Bean
+
++ 根据名字
+
+  + ```java
+    @Service
+    @Qualifier("exampleBean")
+    public class ExampleBean{
+        
+    }
+    ```
+
+    
+
+  + ```java
+    @Service
+    public AnotherExampleBean{
+        @Qualifier("exampleBean") ExampleBean bean;
+    }
+    ```
+
++ 根据类型
+
+  + ```java
+    @Service
+    public class ExampleBean{
+        
+    }
+    ```
+
+    
+
+  + ```java
+    @Service
+    public class AnotherExampleBean{
+        @Autowired
+        ExampleBean bean;
+    }
+    ```
+
+  + @Autowired 声明对其他Bean的引用，作用于属性或者构造函数参数，甚至是方法调用参数上
+
+
+
+## Spring AOP
+
+面向切面编程，实现应用系统的公共服务
+
++ 每个业务方法调用的权限管理
++ 每个方法调用的审计
++ 数据库事务的管理
++ 缓存
+
+### AOP 术语
+
+#### Aspect 切面
+
+
+
 
 
