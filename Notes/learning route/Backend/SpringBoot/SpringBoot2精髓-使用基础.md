@@ -418,3 +418,14 @@ Spring和其他大多数框架都是在运行时刻生成代理
 
 
 
+## AOP注解
+
++ @Aspect：声明这是一个切面类
++ @Around：声明了一个表达式，描述要织入的目标的特性，
+  + @within 目标类型带有注解，其注解类型参数为org.springframework.stereotype.Controller，Spring Controller方法在被调用时，都会执行 @Around 注解的方法，simpleAop
+  + pjp.proceed()，执行完切面代码，执行应用代码，proceed()方法会继续调用原有业务逻辑，并将返回对象正常返回
++ 
+
+<img src="SpringBoot2%E7%B2%BE%E9%AB%93-%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80.assets/image-20210709102021916-1625797223721.png" alt="image-20210709102021916" style="zoom:50%;" />
+
+v

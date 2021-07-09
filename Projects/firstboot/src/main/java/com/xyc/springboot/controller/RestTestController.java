@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestTestController {
     @RequestMapping("/user/{id}")
     public Integer getCreditLevel(@PathVariable String id) {
+        setTest();
         return Integer.parseInt(id);
+    }
+
+    public void setTest() {
+        System.out.println("set 方法......");
     }
 }
