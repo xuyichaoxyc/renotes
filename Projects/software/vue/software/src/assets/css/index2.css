@@ -1,0 +1,69 @@
+/* 容器 */
+.container {
+    width: 100%;
+
+}
+/* 导航 */
+  .navbar {
+    line-height: 69px;
+    width: 100%;
+    background-color: #2d3a4b;
+  }
+  
+  
+  /* 主区域 */
+  .mirrors {
+    width: 1170px;
+    height: auto;
+    overflow-x: auto; /* 当内容过多时y轴出现滚动条 */
+    background-color: rgb(133, 118, 118);
+    padding-left: 6%;
+    position: relative;
+    left: 10%;
+  }
+  .context {
+      width: 80%;
+      height: 500px;
+  }
+  .list {
+      position: relative;
+      width: 780px;
+      height: 700px;
+      background-color: greenyellow;
+      left: -11%;
+  }
+  .news {
+        position: relative;
+        width: 390px;
+        height: 780px;
+        background-color: cadetblue;
+        right: -63%;
+        bottom: 700px;
+  }
+  .list-title {
+      margin-left: 5px;
+      width: 760px;
+      height: 57px;
+      background-color: gray;
+  }
+  .list-title h3 {
+      margin-left: 5px;
+      color: rgb(53, 21, 83);
+      width: 126px;
+      height: 27px;
+  }
+  .files-table {
+      width: 400px;
+      height: 600px;
+  }
+  /* 底部 */
+  .footer {
+      line-height: 100px;
+      color: white;
+      background-color: black;
+  }
+
+  .hidden-line1{
+    width:100%;
+    line-height: 10px;
+  }

@@ -1,34 +1,49 @@
 <template>
-    <!-- 开源镜像软件站 - 首页 -->
-    <div class="components-layout-demo-basic">
-    <a-layout>
-        <a-layout-header class="external-header" style="background:white"><!-- 布局头部 -->
-            <a-row type="flex">
-                <a-col style="background:white" :flex="1"><!-- logo部分 -->
-                    logo部分
-                </a-col>
-                <a-col style="background:white" :flex="2"></a-col>
-                <a-col style="background:white" :flex="2"><!-- 菜单部分 -->
-                    菜单栏
-                </a-col>
-            </a-row>
-        </a-layout-header>
-        <a-layout-content class="external-content" style="height:200px"><!--布局中部 -->
-            <div class="inside-content-box" style="height:100%"><!-- 内容布局容器 -->
-                <div class="list-box"><!-- 文件镜像列表 --> 
+    <!-- 开源镜像软件站 - mirror页 -->
+    <el-container>
+    <el-header style="height:90px"> <!-- 头部 -->
+        <a-row style="padding:13px">
+            <a-col :span="1"></a-col>
+            <a-col :span="4"> <!-- LOGO展示 -->
+                LOGO展示
+            </a-col>
+            <a-col :span="8"></a-col>
+            <a-col :span="10"> <!-- 导航菜单 -->
+                导航菜单(HOME BLOG FEED MIRRORS)
+            </a-col>
+            <a-col :span="1"></a-col>
+        </a-row>
+    </el-header>
+    <el-container>
+        <el-main>
+            <!-- <div class="mirros-list"> -->
+                <!-- <div class="list-head"> -->
+                    <a-input-search class="search" placeholder="input search text" style="width: 200px" @search="onSearch" />
+                            <br /><br />
+                        
 
-                </div>
-                <div class="news-box"><!-- 简介栏 -->
-
-                </div>
+                <!-- </div> -->
+                <!-- <div class="files_list"></div> -->
+            <!-- </div> -->
+        </el-main>
+        <el-aside width="530px">
+            <div class="news">
+                right
             </div>
-        </a-layout-content>
-        <a-layout-footer class="external-footer"><!-- 布局底部 -->
-            
-        </a-layout-footer>
-    </a-layout>
-    </div>
+        </el-aside>
+    </el-container>
+    <el-footer>footer</el-footer>
+    </el-container>
 </template>
 <style scoped>
     @import "../assets/css/index.css";
 </style>
+<script>
+export default {
+  methods: {
+    onSearch(value) {
+      console.log(value);
+    },
+  },
+};
+</script>
