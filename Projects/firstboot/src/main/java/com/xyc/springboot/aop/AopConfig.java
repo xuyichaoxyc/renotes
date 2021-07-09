@@ -1,4 +1,4 @@
-package com.xyc.springboot.Aop;
+package com.xyc.springboot.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -23,6 +23,7 @@ public class AopConfig {
 
             // 调用原有方法
             Object o = pjp.proceed();
+            System.out.println(pjp.toString());
             System.out.println("return: " + o);
 
             return o;

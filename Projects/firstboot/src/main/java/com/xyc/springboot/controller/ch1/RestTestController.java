@@ -1,4 +1,4 @@
-package com.xyc.springboot.controller;
+package com.xyc.springboot.controller.ch1;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
