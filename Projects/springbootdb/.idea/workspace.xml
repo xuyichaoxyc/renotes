@@ -4,19 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6cef0bc-e279-4e4a-af80-8b65d0aa2310" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/config/DruidConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/repository/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xyc/db/springbootdb/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sql/department.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sql/user.sql" afterDir="false" />
+    <list default="true" id="f6cef0bc-e279-4e4a-af80-8b65d0aa2310" name="Default Changelist" comment="springbootdb">
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/SpringbootjpaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/config/DruidConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/dao/Repository.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/dao/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/entity/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/entity/带外键" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/java/com/xyc/jpa/springbootjpa/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootjpa/src/test/java/com/xyc/jpa/springbootjpa/SpringbootjpaApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,21 +59,26 @@
     </option>
   </component>
   <component name="ProjectId" id="1v7pLgqpsroUjK8KtO93jvopJ46" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/idea_project/Spring-Boot-2.0-Samples/Spring-Boot-2.0-Samples/5_dao" />
+    <property name="last_opened_file_path" value="D:/idea_project/Spring-Boot-2.0-Samples/Spring-Boot-2.0-Samples/6_springdata" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
@@ -110,12 +123,18 @@
       <updated>1625922939798</updated>
       <workItem from="1625922943806" duration="400000" />
       <workItem from="1625923388853" duration="271000" />
-      <workItem from="1625977200116" duration="10810000" />
+      <workItem from="1625977200116" duration="12666000" />
+      <workItem from="1625997980349" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="springbootdb" />
+    <option name="LAST_COMMIT_MESSAGE" value="springbootdb" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="139" key="#Auto_Import" timestamp="1625984258402">
@@ -130,10 +149,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="325" y="70" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1625988339565" />
-    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1625988227697">
+    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1625989525690">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1625988227697" />
+    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1625989525690" />
     <state width="254" height="198" key="GotoFile_FileTypePopup" timestamp="1625984555942">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -178,10 +197,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="252" y="122" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1625984378475" />
-    <state x="116" y="90" key="new project wizard" timestamp="1625988243331">
+    <state x="116" y="90" key="new project wizard" timestamp="1625988754344">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="116" y="90" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1625988243331" />
+    <state x="116" y="90" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1625988754344" />
     <state x="413" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1625987097337">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
