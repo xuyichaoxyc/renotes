@@ -61,13 +61,15 @@
                             <span>
                                 <img src="../assets/img/ios.png" height="26" width="24" />
                             </span>
-                            新闻
+                              新闻
                         </h4>
                     </div>
-                    <ul>
-                        <li><a>11</a></li>
-                        <li><a>11</a></li>
-                        <li><a>11</a></li>
+                    <ul
+                    v-for="(item,index) in news"
+                    :key="index"
+                    @click="getNews(item.url)"
+                    >
+                        <li class="li-news"><a class="a-news">{{item.news}}</a></li>
                     </ul>
                 </div>
                 <!-- 域名选择 -->
@@ -80,10 +82,12 @@
                             域名选择
                         </h4>
                     </div>
-                    <ul>
-                        <li><a>http1</a>11</li>
-                        <li><a>http1</a>11</li>
-                        <li><a>http1</a>11</li>
+                    <ul
+                    v-for="(item, index) in yuming"
+                    :key="index"
+                    @click="getYumingUrl(item.url)"
+                    >
+                        <li class="li-yuming"><a class="a-yuming">{{item.url}}</a>{{item.context}}</li>
                     </ul>
                 </div>
                 <!-- 下载连接 -->
@@ -99,7 +103,7 @@
                     <p> 
                         常用下载
                     </p>
-                    <button>获取最新下载</button>
+                    <button class="get-download">获取最新下载</button>
                 </div>
                 <!-- 联系我们 -->
                 <div class="call-us">
@@ -111,15 +115,17 @@
                             联系我们
                         </h4>
                     </div>
-                    <ul>
-                        <li>11<a>http1</a></li>
-                        <li>22<a>http1</a></li>
-                        <li>33<a>http1</a></li>
+                    <ul
+                    v-for="(item, index) in callUs"
+                    :key="index"
+                    @click="callUs(item.url)"
+                    >
+                        <li class="li-call-us">item.context<a class="a-call-us"> {{item.url}}</a></li>
                     </ul>
                 </div>
                 <!-- 相关链接 -->
                 <div class="about-url">
-                     <div class="call-us-url-title">
+                     <div class="about-url-title">
                         <h4>
                             <span>
                                 <img src="../assets/img/ios.png" height="26" width="24" />
@@ -127,17 +133,21 @@
                             相关链接
                         </h4>
                     </div>
-                    <ul>
-                        <li><a>some</a></li>
-                        <li><a>some</a></li>
-                        <li><a>some</a></li>
+                    <ul 
+                    v-for="(item, index) in aboutUrl"
+                    :key="index"
+                    @click="aboutUrl(item.url)"
+                    >
+                        <li class="li-about"><a class="a-about">{{item.context}}</a></li>
                     </ul>
                 </div>
             </div>
+            <div class="clear"></div>
         </div>
         <div class="foot">
                 
-            </div>
+                <p>context</p>
+        </div>
     </div>
 </template>
 
@@ -151,43 +161,55 @@ export default {
         return {
             //测试文件数据
             mirrorsFiles: [
-            {url: "11", name: "python", updateTime: "2021-07-13 14:35:44"},
-            {url: "22", name: "java", updateTime: "2021-07-13 14:35:44"},
-            {url: "33", name: "golang", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
-            {url: "55", name: "css", updateTime: "2021-07-13 14:35:44"},
-        ],
-        // mirrorUpdateTime: [
-        //     {id: "1", },
-        //     {id: "2", updateTime: "2021-07-14 15:35:44"},
-        //     {id: "3", updateTime: "2021-07-15 16:35:44"},
-        //     {id: "4", updateTime: "2021-07-16 17:35:44"},
-        //     {id: "5", updateTime: "2021-07-17 18:35:44"},
-        // ]
+                {url: "11", name: "python", updateTime: "2021-07-13 14:35:44"},
+                {url: "22", name: "java", updateTime: "2021-07-13 14:35:44"},
+                {url: "33", name: "golang", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "44", name: "anaconda", updateTime: "2021-07-13 14:35:44"},
+                {url: "55", name: "css", updateTime: "2021-07-13 14:35:44"},
+            ],
+            news: [
+                {news:"某工厂的xxxxxxxx倒闭了",url:"http://xxxxxx"},
+                {news:"某工厂的xxxxxxxx倒闭了",url:"http://xxxxxx"},
+                {news:"某工厂的xxxxxxxx倒闭了",url:"http://xxxxxx"}
+            ],
+            yuming: [
+                {url:"http://ssadad.com", context:"某网站"},
+                {url:"http://ssadad.com", context:"某网站"},
+                {url:"http://ssadad.com", context:"某网站"}
+            ],
+            callUs: [
+                {url: "http://github.com/xxx", context:"问题反馈"},
+                {url: "http://github.com/xxx", context:"问题反馈"}
+            ],
+            aboutUrl: [
+                {url: "http://sssss.ww.com", context:"镜像网站1"},
+                {url: "http://sssss.ww.com", context:"镜像网站1"},
+                {url: "http://sssss.ww.com", context:"镜像网站1"}
+            ]
         }
     },
     methods: {
@@ -197,6 +219,22 @@ export default {
         },
         //点击列表中的文件
         getFile(url) {
+            console.log(url);
+        },
+        //点击新闻内容
+        getNews(url) {
+            console.log(url);
+        },
+        //点击域名链接
+        getYumingUrl(url) {
+            console.log(url);
+        },
+        //点击联系我们的链接
+        callUs(url) {
+            console,log(url);
+        },
+        //点击相关联接
+        aboutUrl(url) {
             console.log(url);
         }
     },

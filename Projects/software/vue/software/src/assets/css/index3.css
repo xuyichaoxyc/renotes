@@ -1,19 +1,18 @@
-/* 容器 */
+/*************************** 容器 ***************************/
 .container {
-    width: 100%;
-    height: auto;
-    margin: 0;
+    margin: 0 auto;
 }
 
-/* 导航部分容器 */
+/*************************** 头部 ***************************/
 .header {
     width: 1170px;
     height: 67px;
     margin: 12px auto;
+    overflow:hidden;
     /* background-color: mediumslateblue; */
 }
 
-/* 导航Log标志 */
+/*************************** 导航左图标 ***************************/
 .nav-logo {
     width: 272px;
     height: 55px;
@@ -32,7 +31,7 @@
     height: 50px;
 }
 
-/* 导航菜单(HOME BLOG FEED MIRRORS) */
+/*************************** 导航菜单(HOME BLOG FEED MIRRORS) ***************************/
 .nav-names {
     float: right;
     margin-top: 10px;
@@ -42,84 +41,69 @@
     height: 40px;
     margin-right: 50px;
     /* background-color: #690; */
-}
-    
+} 
 #nav ul {
     list-style: none;
     margin-left: 30px;
-}
-    
+}   
 #nav li {
     display: inline;
     line-height: 50px;
     float:left
-}
-    
+}   
 #nav a {
     color: black;
     text-decoration: none;
     padding: 20px 20px;
-}
-    
+}  
 #nav a:hover {
     color: blueviolet;
     border-bottom: 3px solid blueviolet;
 }
 
-
-/* 内容容器 */
+/*************************** 内容容器 ***************************/
 .context {
     width: 1190px;
-    height: auto;
     margin: auto;
-    /* background-color: cadetblue; */
 }
-
+/*************************** 文件列表头部 ***************************/
 /* 文件列表头部 */
 .list {
     width: 780px;
-    height: 500px;
     margin: 5px;
     float: left;
     background-color: white;
 }
-
 .list-title {
     width: 760px;
     height: 50px;
     margin: 5px 9px;
     background-color:white;
 }
-
 .h3-list-title {
     font-size: 24px;
     font-weight: 700;
     float: left;
 }
-
 .list-input {
     width: 198px;
     height: 30px;
     float: right;
     margin: 5px;
     border-radius: 3px;
-    /* border-color: rgba(127, 129, 129, 0.349); */
     border: 1px solid rgba(127, 129, 129, 0.349);
     font-size: 15px;
 }
-
 /* 列表列名 */
 .list-name {
     width: 760px;
     height: 37px;
     margin: 3px 9px;
-    /* background-color: aquamarine; */
     border-bottom: 2.5px solid rgba(127, 129, 129, 0.349);;
 }
 /* 第一列列名 */
 .h5-first-col-name {
     font-size: 18px;
-    /* font-weight: 50px; */
     font-family:Georgia, 'Times New Roman', Times, serif;
     float: left;
     margin-top: 8px;
@@ -135,11 +119,11 @@
     
 }
 
-
+/*************************** 文件列表具体内容 ***************************/
 /* 文件列表行列内容 */
 .mirrors {
     width: 750px;
-    height: 500px;
+    /* height: 500px; */
     margin-top: 5px;
     margin-left: 15px;
     /* background-color: aqua; */
@@ -168,22 +152,138 @@
     font-size: 16px;
     color: black;
 }
+/* 清除浮动 */
+.clear {
+    clear:both
+}
 
-
+/*************************** 中间左边新闻、相关链接 ***************************/
 /* 新闻要提内所有内容 */
 .news {
     width: 390px;
-    height: 500px;
-    margin: 5px;
+    /* height: 500px; */
+    margin-top: 10px;
+    margin-left: 10px;
     float: right;
     /* background-color: bisque; */
 }
+/* 新闻内容 */
+.news-url-title h4 {
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-left: 8px;
+}
+.news-url-title span {
+    margin-left: 8px;
+}
+.li-news {
+    text-align: left;
+}
+.a-news {
+    margin-left: 2px;
+    color: black;
+}
+/* 域名选择 */
+.yuming-url-title h4 {
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-left: 8px;
+}
+.yuming-url-title span {
+    margin-left: 8px;
+}
+.a-yuming {
+    color: blueviolet;
+    margin-left: 2px;
+}
+.li-yuming {
+    text-align: left;
+}
+/* 下载链接 */
+.download-url{
+    overflow: hidden;
+}
+.download-url-title h4{
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-left: 8px;
+}
+.download-url-title span {
+    margin-left: 8px;
+}
+.download-url p {
+    margin-left: 32px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.get-download {
+    float: left;
+    margin-left: 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid blueviolet;
+}
+.get-download:hover {
+    border: 1px solid rgb(153, 100, 202);
+    background-color: rgb(233, 207, 238);
+}
 
+/* 联系我们 */
+.call-us {
+    margin-top: 7px;
+}
+.call-us-url-title h4{
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-left: 8px;
+}
+.call-us-url-title span {
+    margin-left: 8px;
+}
+.li-call-us {
+    text-align: left;
+}
+.a-call-us {
+    margin-left: 10px;
+}
 
-/* 底部内容 */
+/* 相关链接 */
+.about-url-title h4 {
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-left: 8px;
+}
+.about-url-title span {
+    margin-left: 8px;
+}
+.li-about {
+    text-align: left;
+}
+.a-about {
+    margin-left: 10px;
+}
+/*************************** 底部内容 ***************************/
 .foot {
     width: 100%;
-    height: 400px;
+    /* height: 100px; */
     background-color:rgb(60, 69, 78);
-    margin: auto;
+    /* overflow:hidden; */
+    margin-top: 10px;
 }
