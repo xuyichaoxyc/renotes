@@ -3,6 +3,7 @@ package com.xyc.learn.test.jvm.ch2;
 /**
  * VM Args: -Xss128k
  * -Xss:栈内存容量
+ * 虚拟机栈容量太小
  */
 
 public class JavaVMStackSOF {
