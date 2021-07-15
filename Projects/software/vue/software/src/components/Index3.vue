@@ -145,8 +145,36 @@
             <div class="clear"></div>
         </div>
         <div class="foot">
-                
-                <p>context</p>
+            <div class="explain">
+                <p>
+                    网站相关介绍内容
+                </p>
+                <p>
+                    网站相关介绍内容
+                </p>
+                <p>
+                    网站相关介绍内容
+                </p>
+                <p>
+                    网站相关介绍内容
+                </p>
+            </div>
+            <div class="information">
+                <h3>
+                    Contact Us
+                </h3>
+                <ul class="ul-information">
+                    <li ><span>
+                            <img ref="../assets/ios.png" width="15px" height="15px"/>
+                        </span>Mailing List</li>
+                    <li><span>
+                            <img ref="../assets/ios.png" width="15px" height="15px"/>
+                        </span>Blog</li>
+                </ul>
+            </div>
+            <div class="footer-logo">
+                <img ref="../assets/img/logo.png" width="150px" height="150px"/>
+            </div>
         </div>
     </div>
 </template>
