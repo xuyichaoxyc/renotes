@@ -1,0 +1,11 @@
+
+1
+java:S3626)"Remove this redundant jump.(ûÁİ…
+b
+java:S1989&"LHandle the following exception that could be thrown by "login": IOException.(ğæÓ
+X
+java:S1854@"=Remove this useless assignment to local variable "adminInfo".(ˆÈ®ıûÿÿÿÿ
+Z
+java:S2441H"?Make "AdminInfo" serializable or don't store it in the session.(­´²ùÿÿÿÿ
+z
+java:S1989d"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.(®Ó‘ûÿÿÿÿÿ
