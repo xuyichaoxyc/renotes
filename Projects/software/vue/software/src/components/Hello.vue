@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div class="load-svg">
+            <img ref="../assets/svg/puff.svg"/>
+        </div>
         <div class="header">
             <div class="nav-logo">
                 <a class="a-nav-logo" href="#">
@@ -18,7 +21,7 @@
                 </ul>
             </div>
         </div>
-        <div class="middle">
+        <div class="middle" v-bind="loading">
             <div class="left">
                 <p>content</p>
                 <p>content</p>
@@ -94,3 +97,30 @@
 <style scoped>
     @import "../assets/css/hello.css";
 </style>
+<script>
+export default {
+  data() {
+      return {
+          res: false,
+      }
+    },
+  mounted() {
+    console.log(111);
+    // this.waitDateload();
+  },
+  computed: {
+    //   loading() {
+    //       return this.res
+    //   }
+  },
+  methods: {
+//     waitDateload() {
+//       console.log(this.res);
+//       setTimeout(() => {
+//         this.res = true;
+//         console.log(this.res);
+//       }, 5000);
+//     },
+  }
+}
+</script>

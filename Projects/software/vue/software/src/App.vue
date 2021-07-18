@@ -6,7 +6,13 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    let loading = document.getElementsByClassName('load-svg');
+    if(loading != null) {
+      document.body.removeChild(loading);
+    }
+  }
 }
 </script>
 

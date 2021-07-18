@@ -118,7 +118,7 @@
                     <ul
                     v-for="(item, index) in callUs"
                     :key="index"
-                    @click="callUs(item.url)"
+                    @click="getCallUs(item.url)"
                     >
                         <li class="li-call-us">item.context<a class="a-call-us"> {{item.url}}</a></li>
                     </ul>
@@ -136,7 +136,7 @@
                     <ul 
                     v-for="(item, index) in aboutUrl"
                     :key="index"
-                    @click="aboutUrl(item.url)"
+                    @click="getAboutUrl(item.url)"
                     >
                         <li class="li-about"><a class="a-about">{{item.context}}</a></li>
                     </ul>
@@ -258,11 +258,11 @@ export default {
             console.log(url);
         },
         //点击联系我们的链接
-        callUs(url) {
+        getCallUs(url) {
             console,log(url);
         },
         //点击相关联接
-        aboutUrl(url) {
+        getAboutUrl(url) {
             console.log(url);
         }
     },
