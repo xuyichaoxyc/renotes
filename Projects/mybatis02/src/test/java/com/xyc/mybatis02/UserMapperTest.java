@@ -2,6 +2,7 @@ package com.xyc.mybatis02;
 
 import com.xyc.mybatis02.entity.SysRole;
 import com.xyc.mybatis02.entity.SysUser;
+import com.xyc.mybatis02.mapper.RoleMapper;
 import com.xyc.mybatis02.mapper.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
@@ -175,6 +176,41 @@ public class UserMapperTest extends BaseMapperTest {
 
         }finally {
             sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testSelectRolesByUserIdAndRoleEnabled() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            List<SysRole> roleList = userMapper.selectRolesByUserIdAndRoleEnabled(1L, 1);
+
+            Assert.assertNotNull(roleList);
+            Assert.assertTrue(roleList.size() > 0);
+
+        } finally {
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testSelectRolesByUserAndRole() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
+
+            SysUser user = userMapper.selectById(1L);
+            SysRole role = roleMapper.selectRoleById(1L);
+
+            List<SysRole> roleList = userMapper.selectRolesByUserAndRole(user, role);
+
+            Assert.assertNotNull(roleList);
+            Assert.assertTrue(roleList.size() > 0);
+
+        } finally {
             sqlSession.close();
         }
     }

@@ -2,6 +2,7 @@ package com.xyc.mybatis02.mapper;
 
 import com.xyc.mybatis02.entity.SysRole;
 import com.xyc.mybatis02.entity.SysUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -89,4 +90,25 @@ public interface UserMapper {
     int deleteById(Long id);
 
     int deleteById(SysUser user);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 根据用户id和角色的enabled状态获取用户的角色
+     * @Date 2021/7/19 21:55
+     * @param userId
+     * @param enabled
+     * @return java.util.List<com.xyc.mybatis02.entity.SysRole>
+     **/
+    List<SysRole> selectRolesByUserIdAndRoleEnabled(@Param("userId") Long userId, @Param("enabled") Integer enabled);
+//    List<SysRole> selectRolesByUserIdAndRoleEnabled(Long userId, Integer enabled);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO
+     * @Date 2021/7/19 22:25
+     * @param user
+     * @return java.util.List<com.xyc.mybatis02.entity.SysRole>
+     **/
+    List<SysRole> selectRolesByUserAndRole(@Param("user") SysUser user, @Param("role") SysRole role);
+
 }

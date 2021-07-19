@@ -3,6 +3,7 @@ package com.xyc.mybatis02.entity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @ClassName SysRole
@@ -36,7 +37,7 @@ public class SysRole {
     /**
      * 创建时间
      */
-    private LocalDateTime createTime;
+    private Date createTime;
 
     private SysUser user;
 }
