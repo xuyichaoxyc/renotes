@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xyc.mybatis02.mapper.UserMapper">
-    <resultMap id="userMap" type="com.xyc.mybatis02.entity.SysUser">
+    <resultMap id="userMap" type="SysUser">
         <id property="id" column="id"/>
         <result property="userName" column="user_name"/>
         <result property="userPassword" column="user_password"/>
@@ -15,5 +15,31 @@
     
     <select id="selectById" resultMap="userMap">
         select * from sys_user where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="SysUser">
+        select id,
+            user_name userName,
+            user_password userPassword,
+            user_email userEmail,
+            user_info userInfo,
+            head_img headImg,
+            create_time createTime
+        from sys_user
+    </select>
+
+    <select id="selectRolesByUserId" resultType="SysRole">
+        select
+            r.id,
+            r.role_name roleName,
+            r.enabled,
+            r.create_by createBy,
+            r.create_time createTime,
+            u.user_name as "user.userName",
+            u.user_email as "user.userEmail"
+        from sys_user u
+        inner join sys_user_role ur on u.id = ur.user_id
+        inner join sys_role r on ur.role_id = r.id
+        where u.id = #{userId}
     </select>
 </mapper>

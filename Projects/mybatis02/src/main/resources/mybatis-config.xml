@@ -32,7 +32,9 @@
         <mapper resource="com/xyc/mybatis02/mapper/PrivilegeMapper.xml"/>
         <mapper resource="com/xyc/mybatis02/mapper/UserRoleMapper.xml"/>
         <mapper resource="com/xyc/mybatis02/mapper/RolePrivilegeMapper.xml"/>
+        <mapper resource="com/xyc/mybatis02/mapper/CountryMapper.xml"/>
         -->
         <package name="com.xyc.mybatis02.mapper"/>
+
     </mappers>
 </configuration>

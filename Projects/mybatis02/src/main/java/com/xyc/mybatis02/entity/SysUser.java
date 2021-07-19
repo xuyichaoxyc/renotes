@@ -52,5 +52,5 @@ public class SysUser {
      * @Author xuyichao
      * @Description 创建时间
      **/
-    private LocalDateTime createTime;
+    private Date createTime;
 }

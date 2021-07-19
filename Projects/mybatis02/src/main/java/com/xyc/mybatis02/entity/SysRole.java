@@ -37,4 +37,6 @@ public class SysRole {
      * 创建时间
      */
     private LocalDateTime createTime;
+
+    private SysUser user;
 }
