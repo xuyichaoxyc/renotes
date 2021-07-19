@@ -40,4 +40,53 @@ public interface UserMapper {
      * @return java.util.List<com.xyc.mybatis02.entity.SysRole>
      **/
     List<SysRole> selectRolesByUserId(Long userId);
+
+
+    /**
+     * @Author xuyichao
+     * @Description 新增用户
+     * @Date 2021/7/19 16:55
+     * @param user
+     * @return int
+     **/
+    int insert(SysUser user);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 新增用户-使用useGeneratedKeys 方式
+     * @Date 2021/7/19 17:08
+     * @param user
+     * @return int
+     **/
+    int insert2(SysUser user);
+
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 新增用户-使用selectKey方式
+     * @Date 2021/7/19 17:12
+     * @param user
+     * @return int
+     **/
+    int insert3(SysUser user);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 根据Id修改用户
+     * @Date 2021/7/19 17:17
+     * @param id
+     * @return int
+     **/
+    int updateById(SysUser user);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 根据Id 删除用户
+     * @Date 2021/7/19 17:27
+     * @param id
+     * @return int
+     **/
+    int deleteById(Long id);
+
+    int deleteById(SysUser user);
 }
