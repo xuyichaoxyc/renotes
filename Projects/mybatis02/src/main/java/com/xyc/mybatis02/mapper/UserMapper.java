@@ -111,4 +111,16 @@ public interface UserMapper {
      **/
     List<SysRole> selectRolesByUserAndRole(@Param("user") SysUser user, @Param("role") SysRole role);
 
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 根据用户名或邮箱查询用户
+     * @Date 2021/7/20 10:56
+     * @param user
+     * @return java.util.List<com.xyc.mybatis02.entity.SysRole>
+     **/
+    List<SysUser> selectUserByUser(SysUser user);
+
+
+    int updateUserByIdSelective(SysUser user);
 }

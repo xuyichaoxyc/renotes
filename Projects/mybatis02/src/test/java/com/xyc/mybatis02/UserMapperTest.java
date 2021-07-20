@@ -214,4 +214,55 @@ public class UserMapperTest extends BaseMapperTest {
             sqlSession.close();
         }
     }
+
+    @Test
+    public void testSelectUserByUser() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+            // 仅有用户名查询
+            SysUser query = new SysUser();
+            query.setUserName("ad");
+
+            List<SysUser> userList = userMapper.selectUserByUser(query);
+            Assert.assertTrue(userList.size() > 0);
+
+            // 只查询邮箱
+            query = new SysUser();
+            query.setUserEmail("test@mybatis.tk");
+            userList = userMapper.selectUserByUser(query);
+            Assert.assertTrue(userList.size() > 0);
+
+            // 同时查询用户名和邮箱
+            query = new SysUser();
+            query.setUserName("ad");
+            query.setUserEmail("test@mybatis.tk");
+            userList = userMapper.selectUserByUser(query);
+            Assert.assertTrue(userList.size() == 0);
+        } finally {
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testUpdateUserByIdSelective() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+            SysUser user = new SysUser();
+            user.setId(1L);
+            user.setUserEmail("test@mybatis.tk");
+            int result = userMapper.updateUserByIdSelective(user);
+            Assert.assertEquals(1, result);
+            user = userMapper.selectById(1L);
+            Assert.assertEquals("admin", user.getUserName());
+            Assert.assertEquals("test@mybatis.tk", user.getUserEmail());
+
+        } finally {
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
 }
