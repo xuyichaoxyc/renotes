@@ -4,6 +4,7 @@ import com.xyc.mybatis02.entity.SysRole;
 import com.xyc.mybatis02.entity.SysUser;
 import com.xyc.mybatis02.mapper.RoleMapper;
 import com.xyc.mybatis02.mapper.UserMapper;
+import org.apache.catalina.User;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
@@ -262,6 +263,52 @@ public class UserMapperTest extends BaseMapperTest {
 
         } finally {
             sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testSelectUserAndRoleById() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+            SysUser user = userMapper.selectUserAndRoleById(1001L);
+
+            Assert.assertNotNull(user);
+            Assert.assertNotNull(user.getRole());
+        } finally {
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testSelectUserAndRoleById2() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+            SysUser user = userMapper.selectUserAndRoleById2(1001L);
+
+            Assert.assertNotNull(user);
+            Assert.assertNotNull(user.getRole());
+        } finally {
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testSelectAllUserAndRoles() {
+        SqlSession sqlSession = getSqlSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            List<SysUser> userList = userMapper.selectAllUserAndRoles();
+
+            System.out.println("用户数：" + userList.size());
+            for (SysUser user : userList) {
+                System.out.println("用户名：" + user.getUserName());
+            }
+        } finally {
             sqlSession.close();
         }
     }

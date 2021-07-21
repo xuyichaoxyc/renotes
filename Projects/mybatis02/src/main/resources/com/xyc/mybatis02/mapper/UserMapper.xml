@@ -12,7 +12,70 @@
         <result property="headImg" column="head_img" jdbcType="BLOB"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
-    
+
+    <!--
+    <resultMap id="userRoleMap" type="SysUser">
+        <id property="id" column="id" />
+        <result property="userName" column="user_name"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="userEmail" column="user_email"/>
+        <result property="userInfo" column="user_info"/>
+        <result property="headImg" column="head_img" jdbcType="BLOB"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        -->
+        <!-- role 相关属性 -->
+        <!--
+        <result property="role.id" column="role_id"/>
+        <result property="role.roleName" column="role_name"/>
+        <result property="role.enabled" column="enabled"/>
+        <result property="role.createBy" column="create_by"/>
+        <result property="role.createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    -->
+    <!--
+    <resultMap id="userRoleMap" extends="userMap" type="SysUser">
+        <result property="role.id" column="role_id"/>
+        <result property="role.roleName" column="role_name"/>
+        <result property="role.enabled" column="enabled"/>
+        <result property="role.createBy" column="create_by"/>
+        <result property="role.createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    -->
+    <resultMap id="userRoleMap" extends="userMap" type="SysUser">
+        <association property="role" columnPrefix="role_" javaType="SysRole">
+            <result property="id" column="role_id"/>
+            <result property="roleName" column="role_name"/>
+            <result property="enabled" column="enabled"/>
+            <result property="createBy" column="create_by"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        </association>
+    </resultMap>
+
+    <!--
+    <resultMap id="userRoleListMap" extends="userMap" type="SysUser">
+        <id property="id" column="id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="userEmail" column="user_email"/>
+        <result property="userInfo" column="user_info"/>
+        <result property="headImg" column="head_img" jdbcType="BLOB"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+
+        <collection property="roleList" columnPrefix="role_" javaType="SysRole">
+            <id property="id" column="id"/>
+            <result property="roleName" column="role_name"/>
+            <result property="enabled" column="enabled"/>
+            <result property="createBy" column="create_by"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        </collection>
+    </resultMap>
+    -->
+
+    <resultMap id="userRoleListMap" extends="userMap" type="SysUser">
+        <collection property="roleList" columnPrefix="role_" resultMap="com.xyc.mybatis02.mapper.RoleMapper.roleMap">
+        </collection>
+    </resultMap>
+
     <select id="selectById" resultMap="userMap">
         select * from sys_user where id = #{id}
     </select>
@@ -173,5 +236,44 @@
         inner join sys_user_role ur on u.id = ur.user_id
         inner join sys_role r on ur.role_id = r.id
         where u.id = #{id}
+    </select>
+
+    <select id="selectUserAndRoleById2" resultMap="userRoleMap">
+        select
+            u.id,
+            u.user_name,
+            u.user_password,
+            u.user_email,
+            u.user_info,
+            u.head_img,
+            u.create_time,
+            r.id,
+            r.role_name,
+            r.enabled,
+            r.create_by,
+            r.create_time
+        from sys_user u
+        inner join sys_user_role ur on u.id = ur.user_id
+        inner join sys_role r on ur.role_id = r.id
+        where u.id = #{id}
+    </select>
+    
+    <select id="selectAllUserAndRoles" resultMap="userRoleListMap">
+        select
+            u.id,
+            u.user_name,
+            u.user_password,
+            u.user_email,
+            u.user_info,
+            u.head_img,
+            u.create_time,
+            r.id role_id,
+            r.role_name role_role_name,
+            r.enabled role_enabled,
+            r.create_by role_create_by,
+            r.create_time role_create_time
+        from sys_user u
+        inner join sys_user_role ur on u.id = ur.user_id
+        inner join sys_role r on ur.role_id = r.id
     </select>
 </mapper>

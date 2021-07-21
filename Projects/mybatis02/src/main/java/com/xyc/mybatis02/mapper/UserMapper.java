@@ -132,4 +132,9 @@ public interface UserMapper {
      * @return com.xyc.mybatis02.entity.SysUser
      **/
     SysUser selectUserAndRoleById(Long id);
+
+    SysUser selectUserAndRoleById2(Long id);
+
+
+    List<SysUser> selectAllUserAndRoles();
 }

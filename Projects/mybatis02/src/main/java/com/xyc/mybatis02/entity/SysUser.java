@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @ClassName SysUser
@@ -55,4 +56,5 @@ public class SysUser {
     private Date createTime;
 
     private SysRole role;
+    private List<SysUser> roleList;
 }
