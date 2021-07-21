@@ -123,4 +123,13 @@ public interface UserMapper {
 
 
     int updateUserByIdSelective(SysUser user);
+
+    /**
+     * @Author xuyichao
+     * @Description TODO 根据用户 id 获取用户信息和用户的角色信息
+     * @Date 2021/7/21 16:20
+     * @param id
+     * @return com.xyc.mybatis02.entity.SysUser
+     **/
+    SysUser selectUserAndRoleById(Long id);
 }

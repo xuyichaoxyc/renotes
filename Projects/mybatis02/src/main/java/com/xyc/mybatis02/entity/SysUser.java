@@ -53,4 +53,6 @@ public class SysUser {
      * @Description 创建时间
      **/
     private Date createTime;
+
+    private SysRole role;
 }
