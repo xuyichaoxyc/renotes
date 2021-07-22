@@ -1,0 +1,18 @@
+
+~
+java:S1989"cHandle the following exceptions that could be thrown by "directory": IOException, ServletException.(úÜÉ®øÿÿÿÿ
+U	java:S899"";Do something with the "boolean" value returned by "delete".(ÀäÈâÿÿÿÿÿ
+i
+java:S4042""NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ÀäÈâÿÿÿÿÿ
+L
+java:S2696I"6Make the enclosing method "static" or remove this set.(ğÓ‘õ
+N	java:S106J"9Replace this use of System.out or System.err by a logger.(çá¬¹
+z
+java:S1989K"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.(®Ó‘ûÿÿÿÿÿ
+Q
+java:S1128
+";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô
+f
+java:S1104"PMake path a static final constant or non-public and provide accessors if needed.(Ìµ³š
+@
+java:S1444"*Make this "public static path" field final(Ìµ³š
