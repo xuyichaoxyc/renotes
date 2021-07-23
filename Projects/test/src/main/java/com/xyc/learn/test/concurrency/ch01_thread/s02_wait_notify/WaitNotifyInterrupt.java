@@ -22,8 +22,10 @@ public class WaitNotifyInterrupt {
                     }
                     System.out.println("====== thread end ======");
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
+                    System.out.println("thread is interrupted");
                 }
+                System.out.println("thread is over");
             }
         });
 
