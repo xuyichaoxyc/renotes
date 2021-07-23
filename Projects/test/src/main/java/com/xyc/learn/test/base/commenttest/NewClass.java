@@ -1,4 +1,4 @@
-package com.xyc.learn.test.commenttest;
+package com.xyc.learn.test.base.commenttest;
 
 /**
  * @ClassName NewClass

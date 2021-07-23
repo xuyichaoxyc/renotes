@@ -1,4 +1,4 @@
-package com.xyc.learn.test.exceptionandassertandlogtest.throwtest;
+package com.xyc.learn.test.base.exceptionandassertandlogtest.throwtest;
 
 import java.util.Random;
 

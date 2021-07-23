@@ -1,4 +1,4 @@
-package com.xyc.learn.test.proxytest.aoptest;
+package com.xyc.learn.test.base.proxytest.aoptest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

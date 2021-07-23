@@ -1,4 +1,4 @@
-package com.xyc.learn.test.proxytest;
+package com.xyc.learn.test.base.proxytest;
 
 /**
  * @InterfaceName ProxyedObject
