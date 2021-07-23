@@ -1,4 +1,4 @@
-package com.xyc.learn.test.base.proxytest.aoptest;
+package com.xyc.learn.test.base.proxytest.AopTest;
 
 /**
  * @ClassName GunDog

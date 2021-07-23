@@ -1,4 +1,4 @@
-package com.xyc.learn.test.base.collectiontest;
+package com.xyc.learn.test.base.CollectionTest;
 
 import java.util.HashMap;
 import java.util.Map;

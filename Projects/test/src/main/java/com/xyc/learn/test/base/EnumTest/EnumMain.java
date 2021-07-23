@@ -1,4 +1,4 @@
-package com.xyc.learn.test.base.enumtest;
+package com.xyc.learn.test.base.EnumTest;
 
 public class EnumMain {
     public static void main(String[] args) {

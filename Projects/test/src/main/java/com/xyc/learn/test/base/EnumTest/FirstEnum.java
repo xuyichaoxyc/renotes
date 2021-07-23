@@ -1,4 +1,4 @@
-package com.xyc.learn.test.base.enumtest;
+package com.xyc.learn.test.base.EnumTest;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;
