@@ -17,7 +17,7 @@ public class JvmExitTest {
                 }
             }
         });
-        thread.setDaemon(true);
+//        thread.setDaemon(true);
         thread.start();
 
         System.out.println("main thread is over!");
