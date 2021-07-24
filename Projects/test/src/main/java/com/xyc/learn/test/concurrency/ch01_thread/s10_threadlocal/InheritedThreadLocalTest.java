@@ -7,9 +7,9 @@ package com.xyc.learn.test.concurrency.ch01_thread.s10_threadlocal;
  * @Date 2021/7/24 13:32
  * @Version 1.0
  **/
-public class ThreadLocalTest {
+public class InheritedThreadLocalTest {
 
-    static ThreadLocal<String> localVariable = new ThreadLocal<>();
+    static ThreadLocal<String> localVariable = new InheritableThreadLocal<>();
 
     static void print(String string) {
         System.out.println(string + ": " + localVariable.get());
