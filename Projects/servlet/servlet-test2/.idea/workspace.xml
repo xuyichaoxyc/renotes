@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06935db7-1191-4430-ba7d-d9cf0cd9ee04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/artifacts/servlet_test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/servlet-test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/src/com/xyc/MyServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet-test/web/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servlet-test/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-test/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627560024285</updated>
-      <workItem from="1627560025757" duration="325000" />
+      <workItem from="1627560025757" duration="912000" />
     </task>
     <servers />
   </component>
