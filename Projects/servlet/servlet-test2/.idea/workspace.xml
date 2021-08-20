@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06935db7-1191-4430-ba7d-d9cf0cd9ee04" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../servlet-test/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet-test/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627560024285</updated>
       <workItem from="1627560025757" duration="912000" />
+      <workItem from="1627644185879" duration="594000" />
     </task>
     <servers />
   </component>
